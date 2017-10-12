@@ -227,7 +227,7 @@ class Courses extends React.Component {
             <div className="course-header group"><h3>Courses</h3>
             
                 <ul className="course-nav">
-                <li><a aria-current="true" href='#/courses/html' >HTML</a></li>
+                <li><a aria-current="true" href='#/courses/html' className="active">HTML</a></li>
                 <li><a aria-current="false" href='#/courses/css'>CSS</a></li>
                 <li><a aria-current="false" href='#/courses/javascript'>JavaScript</a></li>
               </ul>
