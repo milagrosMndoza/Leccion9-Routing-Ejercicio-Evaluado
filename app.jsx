@@ -2,16 +2,13 @@ class Home extends React.Component {
 	render() {
 		return (
 			<div className="main-content home">
-				<h2>HOME</h2>
-				<p>This fun directory is a project for the <em>React Router Basics</em> course on Treehouse.</p>
-				<p>Learn front end web development and much more! This simple directory app offers a preview of our course
-					library. Choose from many hours of content, from HTML to CSS to JavaScript. Learn to code and get the
-					skills you need to launch a new career in front end web development.</p>
-				<p>We have thousands of videos created by expert teachers on web design and front end development. Our
-					library is continually refreshed with the latest on web technology so you will never fall behind.</p>
-				<hr/>
-
-			</div>
+			<h2>Front End Course Directory</h2>
+			<p>This fun directory is a project for the <em>React Router Basics</em> course on Treehouse.</p>
+			<p>Learn front end web development and much more! This simple directory app offers a preview of our course library. Choose from many hours of content, from HTML to CSS to JavaScript. Learn to code and get the skills you need to launch a new career in front end web development.</p>
+			<p>We have thousands of videos created by expert teachers on web design and front end development. Our library is continually refreshed with the latest on web technology so you will never fall behind.</p>
+			<hr />
+        
+      </div>
 		);
 	}
 }
@@ -32,56 +29,56 @@ class About extends React.Component {
 class Teachers extends React.Component {
 	render() {
 		return (
-			<div className="teachers">
+			<div className="main-content">
 				<h2>Teachers</h2>
-				<div className="row">
-					<div className="col-sm-6">
-						<img className="img-fluid" src="img/teachers/angie.png" alt="" />
-						<div className="content">
+				<ul className="group">
+					<li className="teacher">
+						<img className="teacher-img" src="img/teachers/angie.png" alt="" />
+						
 							<h3 className="title">Angie McAngular</h3>
 							<p>Angie is a web developer and teacher who is passionate about building scalable, data driven web apps, especially ones that address old problems with new tech!</p>
-						</div>
-					</div>
-					<div className="col-sm-6">
-						<img className="img-fluid" src="img/teachers/nodestradamus.png" alt="" />
-						<div className="content">
+					
+					</li>
+					<li className="teacher">
+						<img className="teacher-img" src="img/teachers/nodestradamus.png" alt="" />
+						
 							<h3 className="title">NodeStradamus</h3>
 							<p>'NodeStra' is a software engineer and philosopher trying to leave the world better than he found it. He codes for non-profits, eCommerce, and large-scale web apps.</p>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-sm-6">
-						<img className="img-fluid" src="img/teachers/geo.png" alt="" />
-						<div className="content">
+					
+					</li>
+				
+					<li className="teacher">
+						<img className="teacher-img" src="img/teachers/geo.png" alt="" />
+						
 							<h3 className="title">Geo 'Lo' Cation</h3>
 							<p>Geo is a JavaScript developer working on large-scale applications. He's also a teacher who strives to support students in removing all barriers to learning code.</p>
-						</div>
-					</div>
-					<div className="col-sm-6">
-						<img className="img-fluid" src="img/teachers/ecma.png" alt="" />
-						<div className="content">
+					
+					</li>
+					<li className="teacher">
+						<img className="teacher-img" src="img/teachers/ecma.png" alt="" />
+						
 							<h3 className="title">Ecma Scriptnstuff</h3>
 							<p>Ecma found her passion for computers and programming over 15 years ago. She is excited to introduce people to the wonderful world of JavaScript.</p>
-						</div>
-					</div>
-				</div>
-				<div className="row">
-					<div className="col-sm-6">
-						<img className="img-fluid" src="img/teachers/jay.png" alt="" />
-						<div className="content">
+					
+					</li>
+			
+			
+					<li className="teacher">
+						<img className="teacher-img" src="img/teachers/jay.png" alt="" />
+						
 							<h3 className="title">Jay Query</h3>
 							<p>Jay is a developer, author of CSS: The Missing Manual, JavaScript & jQuery: The Missing Manual, and web development teacher.</p>
-						</div>
-					</div>
-					<div className="col-sm-6">
-						<img className="img-fluid" src="img/teachers/json.png" alt="" />
-						<div className="content">
+					
+					</li>
+					<li className="teacher">
+						<img className="teacher-img" src="img/teachers/json.png" alt="" />
+						
 							<h3 className="title">Json Babel</h3>
 							<p>All of his professional life, Json has worked with computers online; he is a polyglot programmer and likes using the right tools for the job.</p>
-						</div>
-					</div>
-				</div>
+						
+					</li>
+				
+				</ul>
 			</div>)
 	}
 }
@@ -190,51 +187,50 @@ class Courses extends React.Component {
 
 			case 'css':
 				CurrentList = cssCourse.map( (item, index) => {
-					return <li className="row course" key = {index}>
+					return <div><ul> <li className="course media group" key = {index}>
 					<div>
 					<img src={item.img} />
-					<h3>{item.title}</h3>className="row course" 
+					<h3>{item.title}</h3>
 					<p>{item.content}</p>
 					</div>
-					 </li>
+					</li></ul></div>
 				});
 				break;
 			case 'javascript':
 				CurrentList = jsCourse.map( (item, index) => {
-					return <li className="row course" key = {index}> <div>
+					return <div><ul> <li className="course media group" key = {index}> <div>
 					<img src={item.img} />
 					<h3>{item.title}</h3>
 					<p>{item.content}</p>
-					</div> </li>
+					</div>  </li></ul></div>
 				});
 				break;
 			default: //'html'
 				CurrentList = htmlCourse.map( (item, index) => {
-					return <li className="row course" key = {index}> <div>
-					<img src={item.img} />
+					return  <div><ul> <li className="course media group" key = {index}> <div>
+					<img className="course-img" src={item.img} />
 					<h3>{item.title}</h3>
 					<p>{item.content}</p>
-					</div>  </li>
+					</div>  </li></ul></div>
 				});
 				break;
 		}
 		return (
-			<div className="main-content courses">
-				<div className="course-header group">
-					<h2>Courses</h2>
-					<ul className="course-nav">
-						<li><a href='#/courses/html'>HTML</a></li>
-						<li><a href='#/courses/css'>CSS</a></li>
-						<li><a href='#/courses/javascript'>JavaScript</a></li>
-					</ul>
-
-					<ul>
-						{CurrentList}
-					</ul>
-				</div>
-
-				{/* Write routes here... */}
-			</div>
+	
+          <div className="main-content courses">
+            <div className="course-header group"><h3>Courses</h3>
+            
+                <ul className="course-nav">
+                <li><a aria-current="true" href='#/courses/html' >HTML</a></li>
+                <li><a aria-current="false" href='#/courses/css'>CSS</a></li>
+                <li><a aria-current="false" href='#/courses/javascript'>JavaScript</a></li>
+              </ul>
+            
+          </div><br/><br/>
+          <div>
+            {CurrentList}
+          </div>
+		</div>	
 		);
 	}
 }
@@ -287,32 +283,28 @@ class App extends React.Component {
 				Child = Home;
 		}
 		return (
-         <div>
-         <span class="icn-logo"><i class="material-icons">code</i></span>
-            <header>App</header>{' '}
-            <menu>
-               <ul className="main-nav">
-               <li>
-			       <a aria-current="true"  className="active" href="#/Home" >Home</a>
-                  </li>{' '}
-                  <li>
-                     <a  aria-current="true"  className="active" href="#/about">About</a>
-                  </li>{' '}
-                  <li>
-                     <a  aria-current="true"  className="active" href="#/teachers">Teachers</a>
-                  </li>{' '}
-                  <li>
-                     <a  aria-current="true"  className="active" href="#/courses">Courses</a>
-                  </li>
-               </ul>{' '}
-            </menu>
-	         {
-	         	propsForRepos?
-			         <Child route = {propsForRepos} />
-		         :
-			         <Child />
-	         }
+		<div className="row">
+         <div className="col-lg-offset-2 col-lg-8 wrapper">
+              <nav className="navbar">
+                <div className="container">
+                  <div className="navbar-header">
+                    <a className="navbar-brand" href="#/home">
+                      <img alt="Brand" src="logo.PNG"/>
+                    </a>
+                  </div>
+                  <ul className="nav navbar-nav navbar-right">
+                  <li className={this.state.active=="home"?'active':''}><a href="#/home">HOME</a></li>
+                  <li className={this.state.active=="about"?'active':''}><a href="#/about">ABOUT</a></li>
+                  <li className={this.state.active=="teachers"?'active':''}><a href="#/teachers">TEACHERS</a></li>
+                  <li className={this.state.active=="courses"?'active':''}><a href="#/courses">COURSES</a></li>
+               </ul>
+                </div>
+              </nav>
+              <div className="col-lg-12">
+                {propsForRepos?<Child route = {propsForRepos} />:<Child/>}
+              </div>
          </div>
+      </div>
 		);
 	}
 }
