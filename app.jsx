@@ -188,8 +188,10 @@ class Courses extends React.Component {
 			case 'css':
 				CurrentList = cssCourse.map( (item, index) => {
 					return <div><ul> <li className="course media group" key = {index}>
+					
+					<img className="course-img" src={item.img} />
+				
 					<div>
-					<img src={item.img} />
 					<h3>{item.title}</h3>
 					<p>{item.content}</p>
 					</div>
@@ -198,20 +200,24 @@ class Courses extends React.Component {
 				break;
 			case 'javascript':
 				CurrentList = jsCourse.map( (item, index) => {
-					return <div><ul> <li className="course media group" key = {index}> <div>
-					<img src={item.img} />
+					return <div><ul> <li className="course media group" key = {index}> 
+					<img className="course-img" src={item.img} />
+					<div>
 					<h3>{item.title}</h3>
 					<p>{item.content}</p>
-					</div>  </li></ul></div>
+					</div>
+					</li></ul></div>
 				});
 				break;
 			default: //'html'
 				CurrentList = htmlCourse.map( (item, index) => {
-					return  <div><ul> <li className="course media group" key = {index}> <div>
+					return  <div><ul> <li className="course media group" key = {index}>
 					<img className="course-img" src={item.img} />
+					<div>
 					<h3>{item.title}</h3>
 					<p>{item.content}</p>
-					</div>  </li></ul></div>
+					</div>
+					</li></ul></div>
 				});
 				break;
 		}
